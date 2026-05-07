@@ -23,7 +23,7 @@ All scripts read `config.yaml` for paths, K values, and `HMM_SEED=42`.
 
 ## Key findings (synthetic validation)
 
-- 8 figures rendered end-to-end on synthetic data via `scripts/synthetic_smoke.py`.
+- 8 figures rendered on synthetic data via `scripts/synthetic_smoke.py`.
 - ICC(3,1) FO range **[0.68, 0.75, 0.84, 0.91]** (fair → excellent per Cicchetti 1994).
 - ICC(3,1) TP mean **0.47** (fair).
 - State persistence: TP diagonal **0.87–0.91** (by-design property of synthetic generator).
