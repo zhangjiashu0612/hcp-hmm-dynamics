@@ -23,7 +23,7 @@ The pipeline reads paths from [`../config.yaml`](../config.yaml) — adjust the 
 | Extension α | Either dense CIFTI rs-fMRI (preferred) or volumetric MNI rs-fMRI, same subjects | HCP S1200 minimally preprocessed release on S3 | **needed before α** |
 | Extension β | Task fMRI (`WM` and `LANGUAGE`) — see notes below | HCP S1200 task release | **needed before β** |
 
-Subject count: target 30 unrelated subjects for Layer 1 / γ / α. Extension β can drop to 5–10 if bandwidth is tight (we'll decide at Checkpoint 3).
+Subject count: target 30 unrelated subjects for Layer 1 / γ / α. Extension β can drop to 5–10 if bandwidth is tight.
 
 **Disk budget:** ZIP is ~13 GB and full extraction is ~30 GB → peak ~43 GB. The recommended workflow below extracts only the d=300 files for subjects in `subject_list.txt`, dropping peak usage to ZIP + a few hundred MB.
 
