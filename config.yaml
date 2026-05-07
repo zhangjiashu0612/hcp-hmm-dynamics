@@ -1,0 +1,53 @@
+# config.yaml — single source of truth for paths, hyperparameters, seeds.
+# Read by every script in scripts/ via src.config.load_config().
+
+# Reproducibility
+HMM_SEED: 42
+
+# Data paths (relative to repo root). Override per-machine if needed.
+paths:
+  hcp_root: data/HCP                                       # parent of node_timeseries/, task/, cifti/, etc.
+  ica300_dir: data/HCP/node_timeseries/3T_HCP1200_MSMAll_d300_ts2  # primary parcellation
+  task_ica300_dir: data/HCP/task/node_timeseries           # populated only if HCP supplies task d=300 timeseries
+  cifti_dir: data/HCP/cifti                                # grayordinate dtseries (for proper Schaefer parcellation)
+  volumetric_dir: data/HCP/volumetric                      # MNI volumetric fallback for Schaefer
+  subject_list: data/subject_list.txt                      # one HCP subject ID per line; if missing, use first 30 alpha
+  components_mask: data/139_components_mask.txt            # optional; one 0-indexed component per line
+
+# HMM — replicates Jun 2022 / Jun 2025 (K=4 primary, K=6 robustness).
+hmm:
+  K_primary: 4
+  K_robustness: 6
+  covariance_type: full      # for hmmlearn fallback; osl-dynamics has its own knobs
+  n_iter: 100
+  tol: 1.0e-3
+
+# Subjects
+n_subjects: 30               # primary analysis target (Layer 1 + γ + α)
+n_subjects_task: 10          # default for Extension β if bandwidth-limited; override at Checkpoint 3
+
+# HCP run structure
+runs:
+  - REST1_LR
+  - REST1_RL
+  - REST2_LR
+  - REST2_RL
+tr_seconds: 0.72
+
+# Tasks (Extension β)
+tasks:
+  - WM
+  - LANGUAGE
+
+# Schaefer-200 (Extension α)
+schaefer:
+  n_rois: 200
+  yeo_networks: 7
+  resolution_mm: 2
+
+# Output
+output:
+  figures_dir: results/figures
+  tables_dir: results/tables
+  models_dir: results/models     # gitignored
+  synthetic_subdir: synthetic    # for Checkpoint 2 smoke-test outputs

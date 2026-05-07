@@ -1,0 +1,7 @@
+# Ignore everything in data/ except docs and small inclusion masks
+*
+!.gitignore
+!README.md
+!subject_list.txt
+!*.mask.txt
+!139_components_mask.txt

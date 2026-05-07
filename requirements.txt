@@ -1,0 +1,21 @@
+# Pinned to versions installed in the `hcp-hmm` conda env (Python 3.11).
+# Recreate: conda create -n hcp-hmm python=3.11 -y && conda activate hcp-hmm && pip install -r requirements.txt
+#
+# HMM library: osl-dynamics installs but its imports require `mne` and TensorFlow,
+# which are NOT pinned here. Code in src/hmm_fit.py prefers osl-dynamics if its
+# imports succeed; otherwise falls back to hmmlearn GaussianHMM (full covariance) —
+# the active path in this build. The fallback is a Gaussian HMM (not MAR) and is
+# the main methodological deviation from Jun 2025.
+
+numpy==2.4.4
+pandas==3.0.2
+scipy==1.17.1
+matplotlib==3.10.9
+seaborn==0.13.2
+nilearn==0.13.1
+nibabel==5.4.2
+scikit-learn==1.8.0
+PyYAML==6.0.3
+pingouin==0.6.1
+osl-dynamics==3.2.1   # try-first; needs mne + tensorflow at runtime to actually work
+hmmlearn==0.3.3       # active fallback in this build

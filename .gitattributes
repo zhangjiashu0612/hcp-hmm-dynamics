@@ -1,0 +1,8 @@
+# Mark binary so git/GitHub don't attempt diffs on figures.
+*.png binary
+*.pdf binary
+*.npz binary
+*.pkl binary
+
+# Treat the rest as text with LF line endings, regardless of contributor OS.
+* text=auto eol=lf
