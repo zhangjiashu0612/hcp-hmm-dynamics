@@ -1,4 +1,4 @@
-# HCP data shopping list
+# HCP data list
 
 ## Status (May 2026)
 
@@ -8,7 +8,7 @@ The HCP S1200 PTN package (`HCP1200_Parcellation_Timeseries_Netmats.zip`, ~13 GB
 
 > **Provenance.** S3 paths verified against AWS Open Data Registry; PTN ZIP path verified via HCP-Users mailing list archive [Elam 2018].
 
-Everything in `data/` (except this file, the dotfiles, `subject_list.txt`, and the optional `139_components_mask.txt`) is gitignored. Lucas downloads it; the code reads it.
+Everything in `data/` (except this file, the dotfiles, `subject_list.txt`, and the optional `139_components_mask.txt`) is gitignored. 
 
 The pipeline reads paths from [`../config.yaml`](../config.yaml) — adjust the `paths:` section if you put data somewhere else.
 
