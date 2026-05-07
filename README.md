@@ -40,7 +40,7 @@ All scripts read `config.yaml` for paths, K values, and `HMM_SEED=42`.
 
 ### Validations
 
-Figure 5 (test-retest, Extension γ), Figure 6 (parcellation robustness, Extension α), and Figures 7–8 (task vs rest, Extension β) live in `results/figures/`. See `writeup/writeup.md` for the narrative.
+Figure 5 (test-retest, Extension γ), Figure 6 (parcellation robustness, Extension α), and Figures 7–8 (task vs rest, Extension β) live in `results/figures/`. See `writeup/writeup.md` for the future work.
 
 ## Notes
 
