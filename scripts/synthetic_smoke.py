@@ -1,8 +1,7 @@
 """Phase C — synthetic-data smoke test for the entire pipeline (all 8 figures).
 
 Generates fake HMM-structured timeseries and runs every module end-to-end,
-producing Figures 1–8 in results/figures/synthetic/. Decouples code-correctness
-verification from the HCP download wait.
+producing Figures 1–8 in results/figures/synthetic/. 
 
 Run:
     python scripts/synthetic_smoke.py
